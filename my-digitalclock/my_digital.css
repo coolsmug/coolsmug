@@ -1,0 +1,112 @@
+*, *::after, *::before {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: blanchedalmond;
+    font-size: 170px;
+    text-align: center;
+    font-weight: 700;
+    transform-style: preserve-3d;
+    
+}
+
+body {
+    background: radial-gradient(circle, 
+    rgb(128, 78, 32), rgb(97, 51, 8));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; 
+    
+}
+
+.digtal-clock {
+    height: 400px;
+    display: flex; 
+    
+}
+
+.container {
+    width: 150px;
+    height: 200px;
+    background:#333;
+    border-radius: 10px;
+    box-shadow: 1px 5px 5px rgb(0, 0, 0);
+    transition: all .5s;
+    
+}
+
+.digtal-clock .div {
+    --rotation: 0;
+    width: 150px;
+    height: 100px;
+    background: #333;
+    border-radius: 10px 10px 0 0;
+    transform-origin: 0% 100%;
+    transform: rotateX(calc(var(--rotation) * 1deg));
+    transform-style: preserve-3d;
+    overflow: hidden;
+    
+    
+}
+
+.hourTwos, .minuteTwos, .secondTwos{
+    margin-right: 80px;
+    box-sizing: border-box;
+    perspective: 600px;
+    transition:  2s ease-in;
+    position: relative;
+    transform-style: preserve-3d;
+
+  
+}
+
+.hourOnes, .minuteOnes, .secondOnes{
+    margin-right: 30px;
+    perspective: 600px;
+    
+}
+
+.hour-first, .hour-second, .minute-first, 
+.minute-second, .second-first, .second-second, .milli-first, .milli-second{
+    margin-top: -200px;
+    
+    
+}
+
+#didu {
+    position: relative;
+}
+
+#didu::before {
+    width: 154px;
+    height: 3px;
+    border-radius-top-left: ;
+    background: linear-gradient( rgb(0, 0, 0), 
+    #bbb, rgb(0, 0, 0) );
+    position: absolute;
+    content: '';
+    top:102px;
+    left: -2px;
+    box-shadow: 0px 2px 1px black;
+}
+
+.hourTwos::after, .minuteTwos::after{
+    content: ':';
+    font: 150px;
+    position: absolute;
+   color:  rgb(255, 253, 253);
+    text-shadow: 1px 2px 5px black;
+    left: 160px;
+    top: -25px;
+    
+
+}
+
+
+
+.milli-first {
+    --rotation: 0;
+    transform: rotateX(calc(var(--rotation) * 1deg));
+    margin-right: 30px;
+}
